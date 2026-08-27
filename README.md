@@ -1,4 +1,4 @@
-# PolyCafe Planner
+# MyPlanner
 
 ## プロジェクト概要
 
@@ -232,7 +232,3 @@ mvn clean package
 ## ライセンス
 
 このプロジェクトは教育目的で作成されました。
-
-## 作者
-
-KOPO（韓国ポリテクニック大学）
