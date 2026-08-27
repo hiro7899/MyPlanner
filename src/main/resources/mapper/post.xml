@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="post">
+
+	<select id="list" resultType="Post">
+		SELECT * FROM post
+		ORDER BY id
+	</select>
+	
+	<select id="item" resultType="Post">
+		SELECT * FROM post
+		WHERE id = #{id}
+	</select>
+	
+	<insert id="add">
+		INSERT INTO post
+		(id, member_id, name, detail, reg_date)
+		VALUES
+		(POST_SEQ.NEXTVAL, #{memberId}, #{name}, #{detail}, SYSDATE)
+	</insert>
+	
+	<delete id="delete">
+		DELETE FROM post
+		WHERE id = #{id}
+	</delete>
+	
+	<update id="update">
+		UPDATE post
+		SET name= #{name}, detail = #{detail}, update_date = SYSDATE
+		WHERE id = #{id}
+	</update>
+	
+	<insert id="add_photo">
+		INSERT INTO photo
+		VALUES (PHOTO_SEQ.nextval, #{productId}, #{filename}, #{uuid})
+	</insert>
+</mapper>

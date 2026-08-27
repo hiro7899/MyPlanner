@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>	
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="kr.ac.kopo.model.Plan" alias="Plan" />
+		<typeAlias type="kr.ac.kopo.model.Member" alias="Member" />
+		<typeAlias type="kr.ac.kopo.model.Calender" alias="Calender" />
+		<typeAlias type="kr.ac.kopo.model.Post" alias="Post" />
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mapper/plan.xml" />
+		<mapper resource="mapper/member.xml" />
+		<mapper resource="mapper/calender.xml" />
+		<mapper resource="mapper/post.xml" />
+	</mappers>
+</configuration>

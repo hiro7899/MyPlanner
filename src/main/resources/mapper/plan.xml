@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="plan">
+
+	<select id="list" resultType="Plan">
+		SELECT * FROM plan
+		ORDER BY id
+	</select>
+	
+	<select id="item" resultType="Plan">
+		SELECT * FROM plan
+		WHERE id = #{id}
+	</select>
+	
+	<insert id="add">
+		INSERT INTO plan
+		VALUES (PLAN_SEQ.nextval, #{memberId}, #{name})
+	</insert>
+	
+	<delete id="delete">
+		DELETE FROM plan
+		WHERE id = #{id}
+	</delete>
+	
+	<select id="user_list" resultType="Plan">
+		SELECT * FROM plan
+		WHERE member_id = #{memberId}
+		ORDER BY id
+	</select>
+</mapper>
